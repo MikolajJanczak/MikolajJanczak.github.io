@@ -1,0 +1,161 @@
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+/* Media query dla mniejszych urządzeń */
+@media (max-width: 768px) {
+  .w3-sidebar {
+    height: 100vh; /* Wysokość równa 100% wysokości ekranu */
+    overflow-y: hidden; /* Wyłączenie paska przewijania */
+  }
+}
+
+/* Media query dla większych urządzeń */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .w3-sidebar {
+    height: 100vh; /* Wysokość odejmująca wysokość paska nawigacji */
+  }
+}
+
+/* Media query dla większych urządzeń (w tym iPad Air) */
+@media (min-width: 1025px) {
+  .w3-sidebar {
+    height: auto; /* Dodawanie parametru tylko dla komputerów */
+  }
+}
+.w3-main {margin-left: 250px;margin-top: 83px;}
+
+.image-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; 
+    height: 250px;
+}
+
+.image-container img {
+width: 100%;
+height: 100%;
+}
+
+html {scroll-behavior: smooth;}
+
+.clickable-card {
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.clickable-card:hover {
+    box-shadow: 0px 8px 20px rgb(255, 3, 3);
+    transform: translateY(-4px);
+    z-index: 1;
+}
+
+.clickable-card:hover .image-container img {
+    filter: brightness(70%);
+}
+
+.clickable-card:hover p {
+    color: #333;
+}
+
+.clickable-card .image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.clickable-card .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.clickable-card:hover .image-container::before {
+    opacity: 1;
+}
+
+.gif-container {
+    max-width: 100%;
+}
+
+#character-description {
+    text-align: center;
+    margin-top: 10px;
+    margin: 0%;
+}
+
+.w3-modal-content {
+    margin-top: 0%;
+    max-width: 800px;
+    width: auto;
+}
+
+.gif-container {
+    max-width: 100%;
+    height: auto;
+}
+
+#character-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+}
+
+.fa {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    animation: slide linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .slide {
+    flex: 0 0 150px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .store-image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .store-image-container .my-overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .store-image-container:hover .my-overlay-image {
+    opacity: 1;
+  }
+
+  

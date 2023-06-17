@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spider-Man</title>
+<link rel="icon" type="image/x-icon" href="img/pixel.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:240px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><a href="#"><img src="img/logo.png" alt="logo"></a></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">Spider-Man<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#variants" class="w3-bar-item w3-button">Warianty</a>
+      <a href="#enemies" class="w3-bar-item w3-button">Wrogowie</a>
+    </div>
+    <a href="#movies" class="w3-bar-item w3-button">Filmy</a>
+    <a href="store.html" class="w3-bar-item w3-button">Sklep</a>
+    <br>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/35s58BRTGAEWztPo9WqCIs?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px magin" src="https://open.spotify.com/embed/album/6bQkurEvgWIUUvKeqaJRq2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div> 
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left"></p>
+    <p class="w3-right">
+      <a href="store.html" class="fa fa-shopping-cart w3-margin-right"></a>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="img/all.jpg" alt="Baner" style="width:100%">
+    <div class="w3-display-middle w3-text-white" style="padding:24px 48px">
+        <p><a href="#variants" class="w3-button w3-black">WARIANTY SPIDER-MAN'A</a></p>
+        <p><a href="#enemies" class="w3-button w3-black">WROGOWIE SPIDER-MAN'A</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey">
+  </div>
+  <!-- Variants -->
+  <h1 id="variants" style="font-family: 'Raleway', sans-serif">Warianty Spider-Man'a</h1>
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('peter')">
+            <div class="image-container">
+                <img src="img/variants/616.png" alt="Peter Parker">
+            </div>
+            <p>Peter Parker</p>
+        </div>
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('miguel')">
+        <div class="image-container">
+        <img src="img/variants/Miguel_O'Hara.png" alt="Miguel O'Hara">
+        </div>
+        <p>Miguel O'Hara<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('miles')">        <div class="w3-display-container">
+            <div class="image-container">
+            <img src="img/variants/Miles_Morales.png" alt="Miles Morales">
+            </div>
+          <div class="w3-display-middle w3-display-hover">
+          </div>
+        </div>
+        <p>Miles Morales<br></p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('ben')">
+        <div class="image-container">
+            <img src="img/variants/Ben_Reilly.png" alt="Ben Reilly">
+        </div>
+        <p>Ben Reilly<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('ham')">
+        <div class="image-container">
+        <img src="img/variants/Spider_Ham.png" alt="Spider-Ham">
+        </div>
+        <p>Spider-Ham<br></p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('cat')">
+        <div class="w3-display-container">
+            <div class="image-container">
+                <img src="img/variants/Spider_Cat.png" alt="Spider-Cat">
+            </div>
+          <div class="w3-display-middle w3-display-hover" >
+          </div>
+        </div>
+        <p>Spider-Cat<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('punk')">
+        <div class="image-container">
+            <img src="img/variants/Spider_punk.png" alt="Spider-Punk">
+        </div>
+        <p>Spider-Punk</p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"  onclick="showCharacterDetails('lego')">
+        <div class="image-container">
+            <img src="img/variants/LEGO_Spider_Man.png" alt="LEGO Spider-Man">
+            </div>
+        <p>LEGO Spider-Man</p>
+      </div>
+    </div>
+  </div>
+<br>
+ <!-- Enemies -->
+ <h1 id="enemies" style="font-family: 'Raleway', sans-serif">Wrogowie Spider-Man'a</h1>
+  <div class="w3-row"> 
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('octopus')">
+        <div class="image-container">
+        <img src="img/enemies/Doctor_Octopus.png" alt="Doctor Octopus">
+        </div>
+        <p>Doctor Octopus<br></p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('venom')">
+        <div class="image-container" alt="Venom">
+        <img src="img/enemies/Venom.png">
+        </div>
+        <p>Venom<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('mysterio')">
+        <div class="w3-display-container">
+            <div class="image-container">
+            <img src="img/enemies/Mysterio.png" alt="Mysterio">
+            </div>
+          <div class="w3-display-middle w3-display-hover">
+          </div>
+        </div>
+        <p>Mysterio<br></p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('lizard')">
+        <div class="image-container">
+            <img src="img/enemies/Lizard.png" alt="Lizard">
+        </div>
+        <p>Lizard<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('goblin')">
+        <div class="image-container">
+        <img src="img/enemies/Green_Goblin.png" alt="Green Goblin">
+        </div>
+        <p>Green Goblin<br></p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('kingpin')">
+        <div class="w3-display-container">
+            <div class="image-container">
+                <img src="img/enemies/Kingpin.png" alt="Kingpin">
+            </div>
+          <div class="w3-display-middle w3-display-hover">
+          </div>
+        </div>
+        <p>Kingpin<br></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+        <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('sandman')">
+        <div class="image-container">
+            <img src="img/enemies/Sandman.png" alt="Sandman">
+        </div>
+        <p>Sandman</p>
+      </div>
+      <div class="w3-container w3-card clickable-card" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)" onclick="showCharacterDetails('kraven')">
+        <div class="image-container">
+            <img src="img/enemies/Kraven.png" alt="Kraven the Hunter">
+            </div>
+        <p>Kraven the Hunter</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--Character description-->
+  <div id="character-details" class="w3-modal">
+    <div class="w3-modal-content w3-display-middle">
+        <span onclick="hideCharacterDetails()" class="w3-button w3-display-topright">&times;</span>
+        <div class="gif-container">
+            <img id="character-image" src="">
+        </div>
+        <div id="character-description"></div>
+    </div>
+</div>
+   
+<div  id="movies" class="w3-container w3-black w3-padding-32" >
+    <h1>Filmy</h1>
+    <!-- Slider section -->
+    <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man-2002-9695">
+              <img src="img/plakat/1.png" alt="Spider-Man 1">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man+2-2004-34281">
+              <img src="img/plakat/2.png" alt="Spider-Man 2">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man+3-2007-138713">
+              <img src="img/plakat/3.png" alt="Spider-Man 3">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Niesamowity+Spider+Man-2012-401436">
+              <img src="img/plakat/amazing1.png" alt="The Amazing Spider-Man">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Niesamowity+Spider+Man+2-2014-622028e">
+              <img src="img/plakat/amazing2.png" alt="The Amazing Spider-Man 2">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man%3A+Homecoming-2017-659676">
+              <img src="img/plakat/homecoming.png" alt="Spider-Man: Homecoming">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man%3A+Daleko+od+domu-2019-789869">
+              <img src="img/plakat/farfromhome.png" alt="Spider-Man: Far From Home">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man%3A+Bez+drogi+do+domu-2021-850261">
+              <img src="img/plakat/nowayhome.png" alt="Spider-Man: No Way Home">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man+Uniwersum-2018-743233">
+              <img src="img/plakat/into.png" alt="Spider-Man: Into the Spider-Verse">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Spider+Man%3A+Poprzez+multiwersum-2023-842826">
+              <img src="img/plakat/across.png" alt="Spider-Man: Across the Spider-Verse">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Venom-2018-519906">
+              <img src="img/plakat/venom.png" alt="Venom">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://www.filmweb.pl/film/Venom+2%3A+Carnage-2021-836519">
+              <img src="img/plakat/venom2.png" alt="Venom 2">
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script>slide()</script>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Skontaktuj się z nami</h4>
+        <p>Masz jakieś pytania? Śmiało! Napisz do nas.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Imię" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Tytuł" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Wiadomość" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Wyślij</button>
+        </form>
+      </div>
+
+      <div class="w3-col s4">
+        <h4>About</h4>
+        <p><a href="#">Powrót</a></p>
+        <p><a href="#">Pomoc</a></p>
+        <p><a href="javascript:void(0)" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Lokalizacja</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i>Wydział Fizyki i Informatyki Stosowanej Uniwersytetu Łódzkiego</p>
+        <p><i class="fa fa-fw fa-phone"></i> +48 123456789</p>
+        <p><i class="fa fa-fw fa-envelope"></i>ul@uni.lodz.pl</p>
+        <h4>Płatność</h4>
+        <p><i class="fa fa-fw fa-credit-card"></i>Karta bankowa</p>
+        <p><i class="fa fa-fw fa-mobile"></i>BLIK</p>
+        <br>
+        <a href="https://www.facebook.com/spiderman" class="fa fa-facebook-official w3-hover-opacity w3-large"></a>
+        <a href="https://www.instagram.com/spiderman" class="fa fa-instagram w3-hover-opacity w3-large"></a>
+        <a href="https://twitter.com/SpiderMan"class="fa fa-twitter w3-hover-opacity w3-large"></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24"></div>
+</div>
+
+<!-- Newsletter -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Zapisz się na naszą listę aby otrzymywać najnowsze wiadomości ze świata Spider-Man'a.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Zapisz się</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
