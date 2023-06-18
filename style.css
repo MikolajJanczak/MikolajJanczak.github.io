@@ -20,6 +20,13 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   .w3-sidebar {
     height: auto; /* Dodawanie parametru tylko dla komputerów */
   }
+  #description.w3-modal-content {
+    color:black;
+  }
+
+  #description.w3-modal-content.w3-display-middle {
+    color:black;
+  }
 }
 .w3-main {margin-left: 250px;margin-top: 83px;}
 
